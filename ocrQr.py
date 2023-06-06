@@ -32,8 +32,7 @@ def proccess(dirPath):
 
 def scanQr(path):
     print('文件路径 >>> ' + path)
-    # 加载微信二维码扫描殷勤
-    detect_obj = cv2.wechat_qrcode_WeChatQRCode('./wechatqr/detect.prototxt','./wechatqr/detect.caffemodel','./wechatqr/sr.prototxt','./wechatqr/sr.caffemodel')
+    detect_obj = cv2.wechat_qrcode_WeChatQRCode('./detect.prototxt','./detect.caffemodel','./sr.prototxt','./sr.caffemodel')
     img = cv2.imread(path)
     res, points = detect_obj.detectAndDecode(img)
     print('res:', res)
